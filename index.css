@@ -1,3 +1,5 @@
+@import "categories.css";
+
 body {
   background-color:black;
   margin:0px;
@@ -48,6 +50,46 @@ body {
   text-align:center;
 }
 
+.options {
+  width:80%;
+  margin:0px auto;
+}
+
+.options-simple {
+  width:100%;
+  display:table;
+  padding:10px;
+}
+
+#options-simple-search {
+  display:table-cell;
+  border:none;
+  border-radius:30px;
+  height:60px;
+  margin:0px -10px;
+  padding:0px 20px;
+  font-size:16pt;
+  width:100%;
+}
+
+#options-simple-expand {
+  transition:0.4s;
+  display:table-cell;
+  border-radius:29px;
+  padding:0px 20px;
+  width:300px;
+  margin:0px -10px;
+  text-align:center;
+  font-weight:bold;
+  background-color:#3e33d8;
+  cursor:pointer;
+}
+
+#options-simple-expand:hover {
+  transition:0.4s;
+  background-color:#4976f1;
+}
+
 .archive-list {
   margin:0px auto;
   padding:10px 0px;
@@ -56,7 +98,7 @@ body {
   overflow:hidden;
 }
 
-.archive {
+.archive-list li:not(#noresults) {
   position:relative;
   top:0px;
   left:0px;
@@ -68,9 +110,10 @@ body {
   display:inline-block;
   margin:5px;
   overflow:hidden;
+  border-radius:30px;
 }
 
-.archive-image {
+.archive-list li .image {
   transition:0.4s;
   width:100%;
   height:100%;
@@ -78,13 +121,13 @@ body {
   background-size:1000px 600px;
 }
 
-.archive:hover .archive-image {
+.archive-list li:hover .image {
   transition:0.4s;
   background-position:0px 0px;
   background-size:920px 552px;
 }
 
-.archive-icon {
+.archive-list li .icon {
   width:160px;
   height:80px;
   position:absolute;
@@ -93,12 +136,11 @@ body {
   background-size:auto 100%;
 }
 
-.archive-title {
+.archive-list li .title {
   position:absolute;
   bottom:20px;
   left:0px;
   font-family:wf_heroic-condensed-pro_medium,Calibri,"Arial Narrow","Trebuchet MS",Tahoma,Arial,sans-serif;
-  text-transform:uppercase;
   font-weight:bold;
   color:white;
   font-size:48pt;
@@ -106,19 +148,11 @@ body {
   background-color:rgba(0, 0, 0, 0.77);
 }
 
-.h2 {
-  background-image:url("images/icons/H2.png");
+.archive-list li .title:not(.nocaps) {
+  text-transform:uppercase;
 }
 
-.h3 {
-  background-image:url("images/icons/H3.png");
-}
-
-.odst {
-  background-image:url("images/icons/ODST.png");
-}
-
-.archive-hover {
+.archive-list li .hover {
   position:absolute;
   top:0px;
   left:0px;
@@ -127,19 +161,13 @@ body {
   transition:0.4s;
 }
 
-.archive-hover:hover {
+.archive-list li .hover:hover {
   transition:0.4s;
   background-color:rgba(255, 255, 255, 0.1);
 }
 
-#h2-ilovebees {
-  background-image:url("images/thumbnails/H2-ilovebees.png");
-}
-
-#h3-believe {
-  background-image:url("images/thumbnails/H3-Believe.png");
-}
-
-#odst-preMissionEvaluations {
-  background-image:url("images/thumbnails/ODST-PreMissionEvaluations.png");
+#noresults {
+  width:800px;
+  font-size:12pt;
+  font-style:italic;
 }
