@@ -4,57 +4,82 @@
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="index.js"></script> 
   </head>
-  <body>
-    <div class="header">
+  <body onload="onPageLoad();">
+    <header class="header">
       <div class="header-fade"></div>
       <h1 class="header-title">Welcome to the Halopedia Archives</h1>
-    </div>
-    <div class="description">
-      <p>Over the years, many <i>Halo</i> websites and online resources have come and gone, often vanishing without notice or a trace. Their disappearance means the loss of irreplaceable information, valuable media and precious insights into the franchise's long and storied past. These archives represent Halopedia's attempt to preserve these websites and experiences, in the hopes that they may still be enjoyed by past and future fans alike in the years to come.</p>
-      <p>These archives are not always exact mirrors of the originals. Where necessary, we will upgrade them to utilise newer technologies and remove outdated technologies such as Microsoft Silverlight, so that they can be easily access on modern browsers. Furthermore, some websites may have been lost in their entirety, and had to be reconstructed with what records we have. These are marked with an asterisk, *. In all cases, though, our priority is staying true to the originals in every respect possible.</code></p>
-    </div>
-    <div class="options">
-      <div class="options-simple">
-        <input id="options-simple-search" type="text" placeholder="Search the Halopedia Archives..." autocomplete="on" list="archives" onkeydown="search();" onpaste="search();" oninput="search();" autofocus/>
-        <div id="options-simple-expand" onclick="toggleAdvancedOptions()">Show Advanced Options</div>
-      </div>
-      <div id="options-advanced" style="display:none;">
-        Advanced options go here
-      </div>
-    </div>
-    <datalist id="archives">
-      <option value="ilovebees">ilovebees</option>
-      <option value="Believe">Believe</option>
-      <option value="Pre-Mission Evaulations">Pre-Mission Evaluations</option>
-    </datalist>
-    <ul id="archive-list" class="archive-list">
-      <li id="noresults" style="display:none;">
-        <p>No results were found for your search query! We might have the site you're looking for archived under a different name. If we don't have the site you're looking and you believe we should, please contact a Halopedia administrator!</p>
-      </li>
-      <li class="game_H2" title="ilovebees">
-        <a href="ilovebees">
-          <div class="icon"></div>
-          <div class="image" style="background-image: url('images/thumbnails/H2-ilovebees.png')"></div>
-          <div class="title nocaps">ilovebees</div>
-          <div class="hover"></div>
-        </a>
-      </li>
-      <li class="game_H3" title="Believe">
-        <a href="believe">
-          <div class="icon"></div>
-          <div class="image" style="background-image: url('images/thumbnails/H3-Believe.png')"></div>
-          <div class="title">Believe</div>
-          <div class="hover"></div>
-        </a>
-      </li>
-      <li class="game_ODST" title="Pre-Mission Evaluations">
-        <a href="premissionevaulations">
-          <div class="icon"></div>
-          <div class="image" style="background-image: url('images/thumbnails/ODST-PreMissionEvaluations.png')"></div>
-          <div class="title">Pre-Mission Evaluations</div>
-          <div class="hover"></div>
-        </a>
-      </li>
-    </ul>
+    </header>
+    <main class="pageContent">
+      <article class="description">
+        <p>Over the years, many <i>Halo</i> websites and online resources have come and gone, often vanishing without notice or a trace. Their disappearance means the loss of irreplaceable information, valuable media and precious insights into the franchise's long and storied past. These archives represent Halopedia's attempt to preserve these websites and experiences, in the hopes that they may still be enjoyed by past and future fans alike in the years to come.</p>
+        <p>These archives are not always exact mirrors of the originals. Where necessary, we will upgrade them to utilise newer technologies and remove outdated technologies such as Microsoft Silverlight, so that they can be easily access on modern browsers. Furthermore, some websites may have been lost in their entirety, and had to be reconstructed with what records we have. These are marked with an asterisk, *. In all cases, though, our priority is staying true to the originals in every respect possible.</p>
+        <p>For more information on the Halopedia Archives project, see <a href="https://www.halopedia.org/Project:Archives">its Halopedia page</a>.</p>
+      </article>
+      <section class="options">
+        <div class="options-simple">
+          <input id="options-simple-search" type="text" placeholder="Search the Halopedia Archives..." autocomplete="on" list="archives" onkeydown="search();" onpaste="search();" oninput="search();" autofocus/>
+          <div id="options-simple-expand" onclick="toggleAdvancedOptions()">Show Advanced Options</div>
+        </div>
+        <div id="options-advanced" style="display:none;">
+          <ul id="options-advanced-sort">
+            <li id="sort-alphabetic">
+              <input type="radio">
+              <div class="options-advanced-label">Alphabetically</div>
+            </li>
+            <li id="sort-byGame">
+              <input type="radio">
+              <div class="options-advanced-label">By game</div>
+            </li>
+            <li id="sorty-byYear">
+              <input type="radio">
+              <div class="options-advanced-label">By year</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <datalist id="archives">
+        <option value="ilovebees">ilovebees</option>
+        <option value="Believe">Believe</option>
+        <option value="Pre-Mission Evaulations">Pre-Mission Evaluations</option>
+      </datalist>
+      <section>
+      <ul id="archive-list" class="archive-list">
+          <li id="nojs">
+            <p>This web page requires JavaScript to function correctly! Please enable JavaScript to continue, or upgrade to a newer browser if your current one does not support it!</p>
+          </li>
+          <li id="noresults" style="display:none;">
+            <p>No results were found for your search query! We might have the site you're looking for archived under a different name. If we don't have it at all and you believe we should, please contact a Halopedia administrator!</p>
+          </li>
+          <li class="game_H2" title="ilovebees">
+            <a href="ilovebees">
+              <div class="icon"></div>
+              <div class="image" style="background-image: url('images/thumbnails/H2-ilovebees.png')"></div>
+              <div class="title nocaps">ilovebees</div>
+              <div class="hover"></div>
+            </a>
+          </li>
+          <li class="game_H3" title="Believe">
+            <a href="believe">
+              <div class="icon"></div>
+              <div class="image" style="background-image: url('images/thumbnails/H3-Believe.png')"></div>
+              <div class="title">Believe</div>
+              <div class="hover"></div>
+            </a>
+          </li>
+          <li class="game_ODST" title="Pre-Mission Evaluations">
+            <a href="premissionevaulations">
+              <div class="icon"></div>
+              <div class="image" style="background-image: url('images/thumbnails/ODST-PreMissionEvaluations.png')"></div>
+              <div class="title">Pre-Mission Evaluations</div>
+              <div class="hover"></div>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <hr>
+      <p>This web page is distributed under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU General Public License, Version 3</a>. Its source code can be found on the Halopedia GitHub, <a href="https://github.com/Halopedia/Archive">here</a>. The individual archives are not currently available under GPL.</p>
+    </footer>
   </body>
 </html>

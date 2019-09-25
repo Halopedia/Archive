@@ -1,3 +1,16 @@
+var archives = [];
+
+// This function is called when body finishes loading.
+function onPageLoad() {
+  // Immediately remove the no JS notice when this function calls, as JS is
+  // evidently running if this function has been called.
+  document.getElementById("nojs").remove();
+}
+
+function generateList(json) {
+  archives = JSON.parse(json);
+}
+
 function toggleAdvancedOptions() {
   button = document.getElementById("options-simple-expand");
   advOpts = document.getElementById("options-advanced");
@@ -27,4 +40,12 @@ function search() {
   } else {
     document.getElementById("noresults").style.display = "inline-block";
   }
+}
+
+function updateListSearchAndFilters() {
+
+}
+
+function updateListSorting() {
+
 }

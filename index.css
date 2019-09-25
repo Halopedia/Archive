@@ -9,8 +9,18 @@ body {
   font-size:16pt;
 }
 
+a {
+  transition:0.4s;
+  color:#3e33d8;
+  text-decoration:none;
+}
+
+a:hover {
+  transition:0.4s;
+  color:#4976f1;
+}
+
 .header {
-  background-image:url("images/backgrounds/LandingPage.png");
   background-size:100%;
   width:100%;
   max-height:56.25vw;
@@ -22,6 +32,42 @@ body {
   flex-direction: column;
   text-align:center;
   position:relative;
+}
+
+@media not all and (max-width: 3840px) {
+  .header {
+    background-image:url("images/backgrounds/RAW_LandingPage.png");
+  } 
+}
+
+@media (max-width: 3840px) {
+  .header {
+    background-image:url("images/backgrounds/3840px_LandingPage.png");
+  }
+}
+
+@media (max-width: 2560px) {
+  .header {
+    background-image:url("images/backgrounds/2560px_LandingPage.png");
+  }
+}
+
+@media (max-width: 1920px) {
+  .header {
+    background-image:url("images/backgrounds/1920px_LandingPage.png");
+  }
+}
+
+@media (max-width: 1600px) {
+  .header {
+    background-image:url("images/backgrounds/1600px_LandingPage.png");
+  }
+}
+
+@media (max-width: 1280px) {
+  .header {
+    background-image:url("images/backgrounds/1280px_LandingPage.png");
+  }
 }
 
 .header-fade {
@@ -166,8 +212,20 @@ body {
   background-color:rgba(255, 255, 255, 0.1);
 }
 
-#noresults {
+#noresults, #nojs {
   width:800px;
   font-size:12pt;
   font-style:italic;
+}
+
+footer {
+  font-style:italic;
+  font-size:12pt;
+  text-align:center;
+  width:80%;
+  margin:0px auto;
+}
+
+footer hr {
+  width:80%;
 }
