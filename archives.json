@@ -2,22 +2,158 @@
   "archives": [
     {
       "title": "ilovebees",
+      "alts": ["i love bees"],
       "href": "ilovebees",
-      "game": "H2",
+      "category": "H2",
+      "year": 2004,
       "thumb": "H2-ilovebees.png",
       "nocaps": true
     },
     {
       "title": "Believe",
+      "alts": ["Believe Diorama", "Diorama"],
       "href": "believe",
-      "game": "H3",
+      "category": "H3",
+      "year": 2007,
       "thumb": "H3-Believe.png"
     },
     {
+      "title": "Jake Courage",
+      "alts": ["Shooting a Hero", "War Photographer"],
+      "href": "halo3/jakecourage",
+      "category": "H3",
+      "year": 2007,
+      "thumb": "H3-JakeCourage.png"
+    },
+    {
+      "title": "Halo3.com",
+      "alts": ["Halo 3.com", "Halo3DotCom", "Halo 3 DotCom", "Official Website", "Website"],
+      "href": "halo3",
+      "category": "H3",
+      "year": 2007,
+      "thumb": "H3-Halo3DotCom.png"
+    },
+    {
       "title": "Pre-Mission Evaluations",
+      "alts": ["Pre-Misison Evals", "ONI Candidate Assessment Program V5.02A"],
       "href": "premissionevaluations",
-      "game": "ODST",
+      "category": "ODST",
+      "year": 2009,
       "thumb": "ODST-PreMissionEvaluations.png"
     }
-  ]
+  ],
+
+  "categories": {
+    "CE": {
+      "title": "Halo: Combat Evolved",
+      "alts": ["Halo Combat Evolved", "Halo: CE", "Halo CE", "Halo 1", "HCE", "H1"],
+      "sortOrder": 0,
+      "icon": "CE.png"
+    },
+    "H2": {
+      "title": "Halo 2",
+      "alts": [],
+      "sortOrder": 1,
+      "icon": "H2.png"
+    },
+    "H3": {
+      "title": "Halo 3",
+      "alts": [],
+      "sortOrder": 2,
+      "icon": "H3.png"
+    },
+    "HW": {
+      "title": "Halo Wars",
+      "alts": [],
+      "sortOrder": 3,
+      "icon": "HW.png"
+    },
+    "ODST": {
+      "title": "Halo 3: ODST",
+      "alts": ["Halo 3 ODST", "H3: ODST", "H3 ODST", "H3:ODST", "H3ODST"],
+      "sortOrder": 4,
+      "icon": "ODST.png"
+    },
+    "HR": {
+      "title": "Halo: Reach",
+      "alts": ["Halo Reach"],
+      "sortOrder": 5,
+      "icon": "HR.png"
+    },
+    "CEA": {
+      "title": "Halo: Combat Evolved Anniversary",
+      "alts": ["Halo Combat Evolved Anniversary", "Halo 1: Anniversary", "Halo: Anniversary", "Halo 1 Anniversary", "Halo Anniversary", "HCEA", "H1A", "HA"],
+      "sortOrder": 6,
+      "icon": "CEA.png"
+    },
+    "H4": {
+      "title": "Halo 4",
+      "alts": [],
+      "sortOrder": 7,
+      "icon": "H4.png"
+    },
+    "SA": {
+      "title": "Halo: Spartan Assault",
+      "alts": ["Halo Spartan Assault", "HSA"],
+      "sortOrder": 8,
+      "icon": "SA.png"
+    },
+    "MCC": {
+      "title": "Halo: The Master Chief Collection",
+      "alts": ["Halo The Master Chief Collection", "HTMCC"],
+      "sortOrder": 9,
+      "icon": "MCC.png"
+    },
+    "SS": {
+      "title": "Halo: Spartan Strike",
+      "alts": ["Halo Spartan Strike", "HSS"],
+      "sortOrder": 10,
+      "icon": "SS.png"
+    },
+    "H5G": {
+      "title": "Halo 5: Guardians",
+      "alts": ["Halo 5 Guardians", "Halo 5", "H5"],
+      "sortOrder": 11,
+      "icon": "H5G.png"
+    },
+    "HW2": {
+      "title": "Halo Wars 2",
+      "alts": [],
+      "sortOrder": 12,
+      "icon": "HW2.png"
+    },
+    "HFR": {
+      "title": "Halo: Fireteam Raven",
+      "alts": ["Halo Fireteam Raven"],
+      "sortOrder": 13,
+      "icon": "HFR.png"
+    },
+    "HI": {
+      "title": "Halo Infinite",
+      "alts": ["Halo: Infinite"],
+      "sortOrder": 14,
+      "icon": "HI.png"
+    },
+    "Waypoint": {
+      "title": "Halo Waypoint",
+      "alts": ["Halo: Waypoint"],
+      "sortOrder": 15,
+      "icon": "Waypoint.png",
+      "nosearchhelp": true
+    },
+    "BNet": {
+      "title": "Bungie.NET",
+      "alts": [],
+      "sortOrder": 16,
+      "icon": "BNet.png",
+      "nosearchhelp": true
+    },
+    "Misc": {
+      "title": "Miscellaneous",
+      "alts": [],
+      "sortOrder": 17,
+      "icon": "Misc.png",
+      "nosearchhelp": true
+    }
+  }
 }

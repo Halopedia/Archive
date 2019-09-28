@@ -1,6 +1,6 @@
 <html>
  <head>
-    <title>Halopedia Archives</title>
+    <title>Home | Halopedia Archives</title>
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="index.js"></script> 
   </head>
@@ -17,63 +17,72 @@
       </article>
       <section class="options">
         <div class="options-simple">
-          <input id="options-simple-search" type="text" placeholder="Search the Halopedia Archives..." autocomplete="on" list="archives" onkeydown="search();" onpaste="search();" oninput="search();" autofocus/>
+          <input id="options-simple-search" type="text" placeholder="Search the Halopedia Archives..." autocomplete="on" list="archives" onkeydown="search();" onpaste="search();" oninput="search();"/>
           <div id="options-simple-expand" onclick="toggleAdvancedOptions()">Show Advanced Options</div>
         </div>
         <div id="options-advanced" style="display:none;">
-          <ul id="options-advanced-sort">
-            <li id="sort-alphabetic">
-              <input type="radio">
-              <div class="options-advanced-label">Alphabetically</div>
-            </li>
-            <li id="sort-byGame">
-              <input type="radio">
-              <div class="options-advanced-label">By game</div>
-            </li>
-            <li id="sorty-byYear">
-              <input type="radio">
-              <div class="options-advanced-label">By year</div>
-            </li>
-          </ul>
+          <div id="options-advanced-sort">
+            <div class="options-advanced-heading">Sort type</div>
+            <ul id="options-advanced-sortType">
+              <li id="sort-alphabetic">
+                <label>
+                  <input type="radio" name="sortType" value="alphanumeric" onclick="sort()" checked>
+                  <div class="label">Alphabetically</div>
+                </label>
+              </li>
+              <li id="sort-byGame">
+                <label>
+                  <input type="radio" name="sortType" value="category" onclick="sort()">
+                  <div class="label">By category</div>
+                </label>
+              </li>
+              <li id="sort-byYear">
+                <label>
+                  <input type="radio" name="sortType" value="year" onclick="sort()">
+                  <div class="label">By year</div>
+                </label>
+              </li>
+            </ul>
+            <div class="options-advanced-heading">Sort direction</div>
+            <ul id="options-advanced-sortDirection">
+              <li id="sort-ascending">
+                <label>
+                  <input type="radio" name="sortDirection" value="asc" onclick="sort()">
+                  <div class="label">Ascending</div>
+                </label>
+              </li>
+              <li id="sort-descending">
+                <label>
+                  <input type="radio" name="sortDirection" value="desc" onclick="sort()" checked>
+                  <div class="label">Descending</div>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div id="options-advanced-filters">
+            <div class="options-advanced-heading">Filters</div>
+            <ul id="options-advanced-filtersList">
+              <li>
+                <label>
+                  <input id="filter_ALL" type="checkbox" onclick="toggleSelectAll()" checked>
+                  <div id="filter_ALL-label" class="label">(deselect all)</div>
+                </label>
+              </li>
+              <!-- The remainder of this list should be automatically populated by JavaScript! -->
+            </ul>
+          </div>
+          <hr>
         </div>
       </section>
       <datalist id="archives">
-        <option value="ilovebees">ilovebees</option>
-        <option value="Believe">Believe</option>
-        <option value="Pre-Mission Evaulations">Pre-Mission Evaluations</option>
+        <!-- This list should be automatically populated by JavaScript! -->
       </datalist>
       <section>
-      <ul id="archive-list" class="archive-list">
-          <li id="nojs">
+      <ul id="archiveList" class="archiveList">
+          <li id="nojs" class="error">
             <p>This web page requires JavaScript to function correctly! Please enable JavaScript to continue, or upgrade to a newer browser if your current one does not support it!</p>
           </li>
-          <li id="noresults" style="display:none;">
-            <p>No results were found for your search query! We might have the site you're looking for archived under a different name. If we don't have it at all and you believe we should, please contact a Halopedia administrator!</p>
-          </li>
-          <li class="game_H2" title="ilovebees">
-            <a href="ilovebees">
-              <div class="icon"></div>
-              <div class="image" style="background-image: url('images/thumbnails/H2-ilovebees.png')"></div>
-              <div class="title nocaps">ilovebees</div>
-              <div class="hover"></div>
-            </a>
-          </li>
-          <li class="game_H3" title="Believe">
-            <a href="halo3/believe">
-              <div class="icon"></div>
-              <div class="image" style="background-image: url('images/thumbnails/H3-Believe.png')"></div>
-              <div class="title">Believe</div>
-              <div class="hover"></div>
-            </a>
-          </li>
-          <li class="game_ODST" title="Pre-Mission Evaluations">
-            <a href="premissionevaulations">
-              <div class="icon"></div>
-              <div class="image" style="background-image: url('images/thumbnails/ODST-PreMissionEvaluations.png')"></div>
-              <div class="title">Pre-Mission Evaluations</div>
-              <div class="hover"></div>
-            </a>
-          </li>
+          <!-- The remainder of this list should be automatically populated by JavaScript! -->
         </ul>
       </section>
     </main>
