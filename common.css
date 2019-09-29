@@ -15,7 +15,7 @@ body {
 
 @media all and (max-width: 1260px) {
   body {
-    font-size:18pt;
+    font-size:11pt;
   }
 }
 
@@ -60,10 +60,21 @@ a {
   text-transform:uppercase;
   font-weight:bold;
   color:white;
-  font-size:64pt;
   padding:5px 20px;
   height:80px;
   z-index:999;
+}
+
+@media not all and (max-width: 1260px) {
+  .header-title {
+    font-size:64pt;
+  }
+}
+
+@media all and (max-width: 1260px) {
+  .header-title {
+    font-size:24pt;
+  }
 }
 
 .description {
@@ -78,6 +89,18 @@ footer {
   text-align:center;
   width:80%;
   margin:0px auto;
+}
+
+@media not all and (max-width: 1200px) {
+  footer {
+    font-size:12pt;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  footer {
+    font-size:7pt;
+  }
 }
 
 hr {

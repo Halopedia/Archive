@@ -24,9 +24,9 @@
         <div class="options-simple">
           <input id="options-simple-search" type="text" placeholder="Search the Halopedia Archives..." autocomplete="on" list="archives" onkeydown="search();" onpaste="search();" oninput="search();"/>
           <div id="options-simple-expand" onclick="toggleAdvancedOptions()">
-            <!-- #include file="images/icons/Chevron.svg" -->
+            <img src="images/icons/Chevron.svg">
             <div id="options-expand-label">Show Advanced Options</div>
-            <!-- #include file="images/icons/Chevron.svg" -->
+            <img src="images/icons/Chevron.svg">
           </div>
         </div>
         <div id="options-advanced" style="display:none;">

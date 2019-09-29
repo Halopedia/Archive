@@ -200,18 +200,19 @@ function displayLoadFailureMessage() {
 function toggleAdvancedOptions() {
   var button = document.getElementById("options-simple-expand");
   var advOpts = document.getElementById("options-advanced");
+  var icons = button.getElementsByTagName("img");
   if (advOpts.style.display == null || advOpts.style.display == "none") {
-    button.innerHTML = "Hide Advanced Options";
+    button.getElementsByTagName("div")[0].innerHTML = "Hide Advanced Options";
     advOpts.style.display = "block";
-    button.getElementsByTagName("svg").forEach(function (node) {
-      node.style.transform = "rotate(180deg)";
-    });
+    for (var i = 0; i < icons.length; i++) {
+      icons[i].style.transform = "rotate(180deg)";
+    }
   } else {
-    button.innerHTML = "Show Advanced Options";
+    button.getElementsByTagName("div")[0].innerHTML = "Show Advanced Options";
     advOpts.style.display = "none";
-    button.getElementsByTagName("svg").forEach(function (node) {
-      node.style.transform = "rotate(0deg)";
-    });
+    for (var i = 0; i < icons.length; i++) {
+      icons[i].style.transform = "rotate(0deg)";
+    }
   }
 }
 

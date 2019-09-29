@@ -37,44 +37,59 @@
 
 .options-simple {
   width:100%;
-  padding:10px;
+  padding:10px 0px;
   text-align:center;
 }
 
 #options-simple-search {
   border:none;
-  border-radius:30px;
-  height:60px;
-  padding:0px 20px;
-  font-size:16pt;
   width:100%;
 }
 
+@media not all and (max-width: 1260px) {
+  #options-simple-search {
+    border-radius:30px;
+    height:60px;
+    padding:0px 20px;
+    font-size:16pt;
+  }
+}
+
+@media all and (max-width: 1260px) {
+  #options-simple-search {
+    border-radius:20px;
+    height:40px;
+    padding:0px 10px;
+    font-size:12pt;
+  }
+}
+
+
 #options-simple-expand {
   transition:0.4s;
-  border-radius:29px;
   padding:10px;
-  width:343px;
   margin:10px auto 0px auto;
-  text-align:center;
-  font-weight:bold;
   cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 #options-expand-label {
   display:inline-block;
+  width:343px;
+  text-align:center;
+  font-weight:bold;
 }
 
-#options-simple-expand svg {
-  fill:none;
-  stroke:#FFFFFF;
-  stroke-width:7px;
-  stroke-linecap:round;
-  stroke-linejoin:round;
+#options-simple-expand img {
   display:inline-block;
+  width:30px;
+  height:30px;
+  margin:5px;
 }
 
-@media not all and (max-width: 1260px) {
+@media not all and (max-width: 1200px) {
   #options-advanced {
     display:table-row;
   }
@@ -88,9 +103,11 @@
   }
 }
 
-@media all and (max-width: 1260px) {
+@media all and (max-width: 1200px) {
   #options-advanced {
     display:block;
+    width:100%;
+    overflow:hidden;
   }
 
   #options-advanced-sort {
@@ -106,9 +123,20 @@
 
 .options-advanced-heading {
   font-weight:bold;
-  font-size:20pt;
   margin:5px;
   padding:5px;
+}
+
+@media not all and (max-width: 1260px) {
+  .options-advanced-heading {
+    font-size:20pt;
+  }
+}
+
+@media all and (max-width: 1260px) {
+  .options-advanced-heading {
+    font-size:14pt;
+  }
 }
 
 #options-advanced div ul {
@@ -117,9 +145,16 @@
   padding:0px;
 }
 
-#options-advanced ul li {
-  margin:5px;
-  height:25px;
+@media not all and (max-width: 1200px) {
+  #options-advanced ul li {
+    margin:5px;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  #options-advanced ul li {
+    margin:10px;
+  }
 }
 
 #options-advanced ul li label {
@@ -131,21 +166,29 @@
   width:300px;
 }
 
-#options-advanced-filters ul li:first-child {
+#options-advanced-filtersList li {
+  display:inline-block;
+}
+
+#options-advanced-filtersList li:first-child {
   width:100%;
 }
 
-#options-advanced-filters ul li:not(:first-child) {
-  width:375px;
+@media not all and (max-width: 1200px) {
+  #options-advanced-filtersList li:not(:first-child) {
+    width:375px;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  #options-advanced-filtersList li {
+    width:100%;
+  }
 }
 
 #options-advanced-filtersList {
   display:block;
   width:auto;
-}
-
-#options-advanced-filtersList li {
-  display:inline-block;
 }
 
 #options-advanced div ul li label input {
@@ -190,6 +233,13 @@
   .archiveList li:not(.error) {
     width:500px;
     height:282px;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .archiveList li:not(.error) {
+    width:92vw;
+    height:52vw;
   }
 }
 
@@ -245,13 +295,41 @@
   }
 }
 
+@media all and (max-width: 1200px) {
+  .archiveList li .thumb {
+    background-position:-4vw -2.4vw;
+    background-size:100vw 60vw;
+  }
+
+  @media all and (any-hover: hover) {
+    .archiveList li:hover .thumb {
+      background-position:0vw 0vw;
+      background-size:92vw 55.2vw;
+    }
+  }
+}
+
 .archiveList li .icon {
-  width:160px;
-  height:80px;
   position:absolute;
-  top:20px;
-  right:20px;
   background-size:auto 100%;
+}
+
+@media not all and (max-width: 1200px) {
+  .archiveList li .icon {
+    top:20px;
+    right:20px;
+    width:160px;
+    height:80px;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .archiveList li .icon {
+    top:5vw;
+    right:5vw;
+    width:20vw;
+    height:10vw;
+  }
 }
 
 .archiveList li .title {
@@ -280,6 +358,12 @@
 @media all and (max-width: 1280px) {
   .archiveList li .title {
     font-size:36pt;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .archiveList li .title {
+    font-size:24pt;
   }
 }
 
