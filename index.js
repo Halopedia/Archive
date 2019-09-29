@@ -72,12 +72,12 @@ function interpretJsonData(data) {
 
 function generateCategoryDataAndHtml() {
   // Loop through each of the category objects
-  for (id in categories) {
+  for (var id in categories) {
     // Get the relevant category object
-    category = categories[id];
+    var category = categories[id];
 
     // Fill in any blanks in the archive info with the default info
-    for (key in DEFAULT_CATEGORY) {
+    for (var key in DEFAULT_CATEGORY) {
       if (category[key] == null && category[key] !== false) {
         category[key] = DEFAULT_CATEGORY[key];
       }
@@ -111,10 +111,10 @@ function buildCategoryFilterOption(category) {
 
 function generateArchiveDataAndHtml() {
   // Find the archive list element, to which the list items must be appended
-  archiveList = document.getElementById("archiveList");
+  var archiveList = document.getElementById("archiveList");
 
   // For each of the archives...
-  for (i = 0; i < archives.length; i++) {
+  for (var i = 0; i < archives.length; i++) {
     // Generate the necessary archive information
     generateArchiveInformation(archives[i]);
 
@@ -130,7 +130,7 @@ function generateArchiveDataAndHtml() {
 
 function generateArchiveInformation(archive) {
   // Fill in any blanks in the archive info with the default info
-  for (key in DEFAULT_ARCHIVE) {
+  for (var key in DEFAULT_ARCHIVE) {
     if (archive[key] == null) {
       archive[key] = DEFAULT_ARCHIVE[key];
     }
@@ -144,7 +144,7 @@ function generateArchiveInformation(archive) {
   archive.id = archive.title.replace(/\s+/g, "_");
 
   // Get the archive's category
-  category = categories[archive.category];
+  var category = categories[archive.category];
 
   // If the nosearchhelp field is not set to true on the archive's category,
   // generate additional alternate names for the search bar to check against,
@@ -154,17 +154,17 @@ function generateArchiveInformation(archive) {
     // Extract the alts array from the archive object, and blank the object's
     // copy of it - since the search feature uses regexes, "ALT_NAME" is
     // superfluous when "CAT_NAME ALT_NAME" is already in the alt list
-    alts = archive.alts;
+    var alts = archive.alts;
     archive.alts = [];
 
     // For every possible combination of "CAT_NAME" and "ALT_NAME", add both
     // "CAT_NAME ALT_NAME" and "ALT_NAME CAT_NAME" to the list of alternate
     // names - this will make it so that search terms such as "Halo 3 Believe"
     // still return the expected results despite not exactly matching the title
-    for (j = 0; j < alts.length; j++) {
-      for (k = 0; k < category.alts.length; k++) {
-        archive.alts.push(alts[j] + ' ' + category.alts[k])
-        archive.alts.push(category.alts[k] + ' ' + alts[j]);
+    for (var i = 0; i < alts.length; i++) {
+      for (var j = 0; j < category.alts.length; j++) {
+        archive.alts.push(alts[i] + ' ' + category.alts[j])
+        archive.alts.push(category.alts[j] + ' ' + alts[i]);
       }
     }
   }
@@ -190,7 +190,7 @@ function buildArchiveListItem(archive) {
 }
 
 function displayLoadFailureMessage() {
-  archiveList = document.getElementById("archiveList");
+  var archiveList = document.getElementById("archiveList");
   archiveList.innerHTML += `
 <li id="loadfail" class="error">
   <p>There was an error loading the archive list! If this error persists, please contact a Halopedia administrator.</p>
@@ -198,20 +198,26 @@ function displayLoadFailureMessage() {
 }
 
 function toggleAdvancedOptions() {
-  button = document.getElementById("options-simple-expand");
-  advOpts = document.getElementById("options-advanced");
+  var button = document.getElementById("options-simple-expand");
+  var advOpts = document.getElementById("options-advanced");
   if (advOpts.style.display == null || advOpts.style.display == "none") {
     button.innerHTML = "Hide Advanced Options";
     advOpts.style.display = "block";
+    button.getElementsByTagName("svg").forEach(function (node) {
+      node.style.transform = "rotate(180deg)";
+    });
   } else {
     button.innerHTML = "Show Advanced Options";
     advOpts.style.display = "none";
+    button.getElementsByTagName("svg").forEach(function (node) {
+      node.style.transform = "rotate(0deg)";
+    });
   }
 }
 
 function toggleSelectAll() {
-  checkbox = document.getElementById("filter_ALL");
-  enabled = checkbox.checked;
+  var checkbox = document.getElementById("filter_ALL");
+  var enabled = checkbox.checked;
   if (checkbox.checked) {
     document.getElementById("filter_ALL-label").innerText = "(deselect all)";
   } else {
@@ -246,16 +252,16 @@ function filterIndividual(id) {
 }
 
 function filterOnly() {
-  for (id in categories) {
+  for (var id in categories) {
     categories[id].visible = document.getElementById("filter_" + id).checked;
   }
 }
 
 function searchOnly() {
-  regex = getSearchQueryRegex();
-  for (i = 0; i < archives.length; i++) {
+  var regex = getSearchQueryRegex();
+  for (var i = 0; i < archives.length; i++) {
     archives[i].visible = false;
-    for (j = 0; j < archives[i].alts.length; j++) {
+    for (var j = 0; j < archives[i].alts.length; j++) {
       if (regex.test(archives[i].alts[j])) {
         archives[i].visible = true;
         break;
@@ -266,7 +272,7 @@ function searchOnly() {
 
 function getSearchQueryRegex() {
   // Get the current string value of the search bar
-  text = document.getElementById("options-simple-search").value;
+  var text = document.getElementById("options-simple-search").value;
 
   // Strip out any leading or trailing whitespace
   text = text.replace(/(^\s+)(\s+$)/g, "");
@@ -279,9 +285,9 @@ function getSearchQueryRegex() {
 }
 
 function showVisible() {
-  found = false;
+  var found = false;
   for (i = 0; i < archives.length; i++) {
-    domObject = document.getElementById("id_" + archives[i].id);
+    var domObject = document.getElementById("id_" + archives[i].id);
     if (archives[i].visible
         && categories[archives[i].category].visible) {
       domObject.style.display = "inline-block";
@@ -298,22 +304,24 @@ function showVisible() {
 }
 
 function sort() {
-  type = document.querySelector('input[name="sortType"]:checked').value;
-  ascending = document.querySelector('input[name="sortDirection"]:checked')
+  var type = document.querySelector('input[name="sortType"]:checked').value;
+  var ascending = document.querySelector('input[name="sortDirection"]:checked')
       .value === "asc";
-
+  var func = null;
   
   switch (type) {
     case "alphanumeric":
       func = function (a, b) {
-        return ascending ? a.title.toLowerCase() < b.title.toLowerCase() : a.title.toLowerCase() > b.title.toLowerCase();
+        return ascending ? a.title.toLowerCase() < b.title.toLowerCase()
+            : a.title.toLowerCase() > b.title.toLowerCase();
       };
       break;
     case "category":
       func = function (a, b) {
         catA = categories[a.category];
         catB = categories[b.category];
-        return ascending ? catA.sortOrder > catB.sortOrder : catA.sortOrder < catB.sortOrder;
+        return ascending ? catA.sortOrder > catB.sortOrder
+            : catA.sortOrder < catB.sortOrder;
       };
       break;
     case "year":
@@ -337,10 +345,10 @@ function sort() {
 
 function sortArchiveList(compare) {
   do {
-    switched = false;
+    var switched = false;
     for (i = 0; i < archives.length - 1; i++) {
       if (compare(archives[i], archives[i + 1])) {
-        carry = archives[i];
+        var carry = archives[i];
         archives[i] = archives[i + 1];
         archives[i + 1] = carry;
         switched = true;

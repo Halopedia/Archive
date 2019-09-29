@@ -1,0 +1,31 @@
+@import "common.css";
+
+@media not all and (max-width: 2560px) {
+  .header {
+    background-image:url("images/backgrounds/3840px_404.png");
+  } 
+}
+
+@media (max-width: 2560px) {
+  .header {
+    background-image:url("images/backgrounds/2560px_404.png");
+  }
+}
+
+@media (max-width: 1920px) {
+  .header {
+    background-image:url("images/backgrounds/1920px_404.png");
+  }
+}
+
+@media (max-width: 1600px) {
+  .header {
+    background-image:url("images/backgrounds/1600px_404.png");
+  }
+}
+
+@media (max-width: 1280px) {
+  .header {
+    background-image:url("images/backgrounds/1280px_404.png");
+  }
+}
