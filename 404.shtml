@@ -6,7 +6,7 @@
     <meta name="keywords" content="Halo, Halopedia, Halopedia Archive, Halopedia Archives, Believe, ilovebees, Jake Courage">
     <meta name="author" content="Halopedia">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="404.css">
+    <link rel="stylesheet" type="text/css" href="/404.css">
   </head>
   <body onload="onPageLoad();">
     <header class="header">
@@ -15,7 +15,7 @@
     </header>
     <main class="pageContent">
       <article class="description">
-        <p>Sorry, we don't have that page archived! Either it was unrelated to <i>Halo</i>, or was not notable enough to archive. If you believe the page should be archived, contact a Halopedia administrator. Otherwise, press your browser's back button to return to the archive, or <a href="index.shtml">return to the home page</a>.</p>
+        <p>Sorry, we don't have that page archived! Either it was unrelated to <i>Halo</i>, or was not notable enough to archive. If you believe the page should be archived, contact a Halopedia administrator. Otherwise, press your browser's back button to return to the archive, or <a href="/">return to the home page</a>.</p>
       </article>
     </main>
     <footer>
