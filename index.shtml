@@ -1,6 +1,11 @@
 <html>
  <head>
     <title>Home | Halopedia Archives</title>
+    <meta charset="UTF-8">
+    <meta description="The Halopedia Archives are a collection of archives of past Halo websites and online resources that are now defunct.">
+    <meta name="keywords" content="Halo, Halopedia, Halopedia Archive, Halopedia Archives, Believe, ilovebees, Jake Courage">
+    <meta name="author" content="Halopedia">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="index.js"></script> 
   </head>

@@ -1,6 +1,11 @@
 <html>
  <head>
     <title>Page Not Found | Halopedia Archives</title>
+    <meta charset="UTF-8">
+    <meta description="Halopedia Archives 404: This page has not been archived, due to a lack of relevance to Halo, or a lack of notability!">
+    <meta name="keywords" content="Halo, Halopedia, Halopedia Archive, Halopedia Archives, Believe, ilovebees, Jake Courage">
+    <meta name="author" content="Halopedia">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="404.css">
   </head>
   <body onload="onPageLoad();">
