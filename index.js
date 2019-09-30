@@ -13,7 +13,9 @@ const DEFAULT_ARCHIVE = {
   alts: [],
   href: "404.shtml",
   category: "Misc",
-  year: "UNKNOWN",
+  releaseDate: "UNKNOWN",
+  removalDate: "UNKNOWN",
+  archivalDate: "UNKNOWN",
   thumb: "THUMBNAIL_MISSING.png"
 };
 
@@ -250,6 +252,28 @@ function filter() {
 function filterIndividual(id) {
   categories[id].visible = document.getElementById("filter_" + id).checked;
   showVisible();
+  var allVisible = true;
+  var allInvisible = true;
+  for (var id in categories) {
+    if (categories[id].visible) {
+      allInvisible = false;
+    } else {
+      allVisible = false;
+    }
+  }
+  if (allVisible) {
+    document.getElementById("filter_ALL-label").innerText = "(deselect all)";
+    document.getElementById("filter_ALL").checked = true;
+  } else if (allInvisible) {
+    document.getElementById("filter_ALL-label").innerText = "(select all)";
+    document.getElementById("filter_ALL").checked = false;
+  }
+}
+
+if (checkbox.checked) {
+  document.getElementById("filter_ALL-label").innerText = "(deselect all)";
+} else {
+  document.getElementById("filter_ALL-label").innerText = "(select all)";
 }
 
 function filterOnly() {
@@ -309,25 +333,67 @@ function sort() {
   var ascending = document.querySelector('input[name="sortDirection"]:checked')
       .value === "asc";
   var func = null;
+
+  var ascLabel = document.getElementById("sort-ascending-label");
+  var descLabel = document.getElementById("sort-descending-label");
+
+  switch (type) {
+    case "alphanumeric":
+      ascLabel.innerText = "Ascending (A to Z)";
+      descLabel.innerText = "Descending (Z to A)";
+      break;
+    case "releaseDate":
+    case "removalDate":
+    case "archivalDate":
+      ascLabel.innerText = "Ascending (old to new)";
+      descLabel.innerText = "Descending (new to old)";
+      break;
+    default:
+      ascLabel.innerText = "Ascending";
+      descLabel.innerText = "Descending";
+      break;
+  }
   
   switch (type) {
     case "alphanumeric":
       func = function (a, b) {
-        return ascending ? a.title.toLowerCase() < b.title.toLowerCase()
-            : a.title.toLowerCase() > b.title.toLowerCase();
+        return ascending ? a.title.toLowerCase() > b.title.toLowerCase()
+            : a.title.toLowerCase() < b.title.toLowerCase();
       };
       break;
     case "category":
       func = function (a, b) {
         catA = categories[a.category];
         catB = categories[b.category];
+        if (catA.sortOrder == catB.sortOrder) {
+          return a.title.toLowerCase() > b.title.toLowerCase();
+        }
         return ascending ? catA.sortOrder > catB.sortOrder
             : catA.sortOrder < catB.sortOrder;
       };
       break;
-    case "year":
+    case "releaseDate":
       func = function (a, b) {
-        return ascending ? a.year > b.year : a.year < b.year;
+        if (a.releaseDate == b.releaseDate) {
+          return a.title.toLowerCase() > b.title.toLowerCase();
+        }
+        return ascending ? a.releaseDate > b.releaseDate : a.releaseDate < b.releaseDate;
+      };
+      break;
+    case "removalDate":
+      func = function (a, b) {
+        if (a.removalDate == b.removalDate) {
+          return a.title.toLowerCase() > b.title.toLowerCase();
+        }
+        return ascending ? a.removalDate > b.removalDate : a.removalDate < b.removalDate;
+      };
+      break;
+    case "archivalDate":
+      func = function (a, b) {
+        if (a.archivalDate == b.archivalDate) {
+          return a.title.toLowerCase() > b.title.toLowerCase();
+        }
+        return ascending ? a.archivalDate > b.archivalDate : a.archivalDate < b.archivalDate;
       };
       break;
     default:

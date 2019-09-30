@@ -47,8 +47,20 @@
               </li>
               <li id="sort-byYear">
                 <label>
-                  <input type="radio" name="sortType" value="year" onclick="sort()">
-                  <div class="label">By year</div>
+                  <input type="radio" name="sortType" value="releaseDate" onclick="sort()">
+                  <div class="label">By release date</div>
+                </label>
+              </li>
+              <li id="sort-byYear">
+                <label>
+                  <input type="radio" name="sortType" value="removalDate" onclick="sort()">
+                  <div class="label">By date of deletion/removal</div>
+                </label>
+              </li>
+              <li id="sort-byYear">
+                <label>
+                  <input type="radio" name="sortType" value="archivalDate" onclick="sort()">
+                  <div class="label">By date archived</div>
                 </label>
               </li>
             </ul>
@@ -56,14 +68,14 @@
             <ul id="options-advanced-sortDirection">
               <li id="sort-ascending">
                 <label>
-                  <input type="radio" name="sortDirection" value="asc" onclick="sort()">
-                  <div class="label">Ascending</div>
+                  <input type="radio" name="sortDirection" value="asc" onclick="sort()" checked>
+                  <div class="label" id="sort-ascending-label">Ascending</div>
                 </label>
               </li>
               <li id="sort-descending">
                 <label>
-                  <input type="radio" name="sortDirection" value="desc" onclick="sort()" checked>
-                  <div class="label">Descending</div>
+                  <input type="radio" name="sortDirection" value="desc" onclick="sort()">
+                  <div class="label" id="sort-descending-label">Descending</div>
                 </label>
               </li>
             </ul>

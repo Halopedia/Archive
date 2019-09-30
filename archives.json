@@ -1,11 +1,30 @@
 {
+  "sample-archive": {
+    "title": "The display title for the archive",
+    "alts": ["An array of all the search terms that should be associated with the archive"],
+    "href": "The location of the archive resources relative to https://archives.halopedia.org/",
+    "category": "The id of the category the archive should be placed in",
+    "releaseDate": "The release date of the original website, in the format YYYYMMDD",
+    "releaseDateApproximate": "A boolean value - true if the given release date is approximate, false or unset otherwise",
+    "removalDate": "The date of removal/deletion/loss of the original website, in the format YYYYMMDD",
+    "removalDateApproximate": "A boolean value - true if the given removal date is approximate, false or unset otherwise",
+    "archivalDate": "The date the site was added to the Halopedia Archives",
+    "thumb": "The location of the archive's thumbnail, relative to https://archives.halopedia.org/images/thumbnails/",
+    "isrecreation": "A boolean value - true if the archive is a recreation, and not an exact copy of the original site, false or unset otherwise",
+    "nocaps": "A boolean value - true if the archive's title should not be forced to display in all caps, but usually false or unset"
+  },
+
   "archives": [
     {
       "title": "ilovebees",
       "alts": ["i love bees"],
       "href": "/halo2/ilovebees",
       "category": "H2",
-      "year": 2004,
+      "releaseDate": 20040718,
+      "releaseDateApproximate": true,
+      "removalDate": 20141015,
+      "removalDateApproximate": true,
+      "archivalDate": "TODO",
       "thumb": "H2-ilovebees.png",
       "nocaps": true
     },
@@ -14,7 +33,11 @@
       "alts": ["Believe Diorama", "Diorama"],
       "href": "/halo3/believe",
       "category": "H3",
-      "year": 2007,
+      "releaseDate": 20070000,
+      "releaseDateApproximate": true,
+      "removalDate": 30000000,
+      "removalDateApproximate": true,
+      "archivalDate": "TODO",
       "thumb": "H3-Believe.png"
     },
     {
@@ -22,7 +45,11 @@
       "alts": ["Shooting a Hero", "War Photographer"],
       "href": "/halo3/jakecourage",
       "category": "H3",
-      "year": 2007,
+      "releaseDate": 20070000,
+      "releaseDateApproximate": true,
+      "removalDate": 30000000,
+      "removalDateApproximate": true,
+      "archivalDate": "TODO",
       "thumb": "H3-JakeCourage.png"
     },
     {
@@ -30,7 +57,11 @@
       "alts": ["Halo 3.com", "Halo3DotCom", "Halo 3 DotCom", "Official Website", "Website"],
       "href": "/halo3",
       "category": "H3",
-      "year": 2007,
+      "releaseDate": 20070000,
+      "releaseDateApproximate": true,
+      "removalDate": 30000000,
+      "removalDateApproximate": true,
+      "archivalDate": "TODO",
       "thumb": "H3-Halo3DotCom.png"
     },
     {
@@ -38,7 +69,11 @@
       "alts": ["Pre-Misison Evals", "ONI Candidate Assessment Program V5.02A"],
       "href": "/odst/premissionevaluations",
       "category": "ODST",
-      "year": 2009,
+      "releaseDate": 20090000,
+      "releaseDateApproximate": true,
+      "removalDate": 30000000,
+      "removalDateApproximate": true,
+      "archivalDate": "TODO",
       "thumb": "ODST-PreMissionEvaluations.png"
     },
     {
@@ -46,10 +81,24 @@
       "alts": ["Xbox.com Halo 4", "XboxDotCom - Halo 4", "XboxDotCom Halo 4", "Xbox.com"],
       "href": "/halo4/xboxdotcom",
       "category": "H4",
-      "year": 2012,
+      "releaseDate": 20120000,
+      "releaseDateApproximate": true,
+      "removalDate": 30000000,
+      "removalDateApproximate": true,
+      "archivalDate": "TODO",
       "thumb": "H4-XboxDotComHalo4.png"
     }
   ],
+
+  "sample-category": {
+    "ID": {
+      "title": "The display title of the category",
+      "alts": ["An array of other titles that users might associate with the category - used for the search feature"],
+      "sortOrder": "An integer determining the priority of the category when ordering search results by category (low values are shown first, when set to ascending)",
+      "icon": "The display icon of the category, relative to the path https://archives.halopedia.org/images/icons/categories/",
+      "nosearchhelp": "A boolean value - if true, the site will NOT attempt to auto-generate possible search terms by combining the names of categories and archives (e.g. Halo 3 Believe). Defaults to false."
+    }
+  },
 
   "categories": {
     "CE": {
@@ -151,7 +200,7 @@
     },
     "BNet": {
       "title": "Bungie.NET",
-      "alts": [],
+      "alts": ["BungieDotNet"],
       "sortOrder": 16,
       "icon": "BNet.png",
       "nosearchhelp": true

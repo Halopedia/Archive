@@ -7,15 +7,23 @@ body {
   font-size:16pt;
 }
 
-@media not all and (max-width: 1260px) {
+@media not all and (max-width: 1200px) {
   body {
     font-size:16pt;
   }
 }
 
-@media all and (max-width: 1260px) {
-  body {
-    font-size:11pt;
+@media all and (max-width: 1200px) {
+  @media all and (orientation: portrait) {
+    body {
+      font-size:11pt;
+    }
+  }
+
+  @media all and (orientation: landscape) {
+    body {
+      font-size:10pt;
+    }
   }
 }
 
@@ -65,13 +73,13 @@ a {
   z-index:999;
 }
 
-@media not all and (max-width: 1260px) {
+@media not all and (max-width: 1200px) {
   .header-title {
     font-size:64pt;
   }
 }
 
-@media all and (max-width: 1260px) {
+@media all and (max-width: 1200px) {
   .header-title {
     font-size:24pt;
   }
@@ -98,8 +106,16 @@ footer {
 }
 
 @media all and (max-width: 1200px) {
-  footer {
-    font-size:7pt;
+  @media all and (orientation: portrait) {
+    footer {
+      font-size:7pt;
+    }
+  }
+
+  @media all and (orientation: landscape) {
+    footer {
+      font-size:5pt;
+    }
   }
 }
 
