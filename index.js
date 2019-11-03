@@ -16,7 +16,7 @@ const DEFAULT_ARCHIVE = {
   releaseDate: "UNKNOWN",
   removalDate: "UNKNOWN",
   archivalDate: "UNKNOWN",
-  thumb: "THUMBNAIL_MISSING.png"
+  thumb: "THUMBNAIL_MISSING.jpg"
 };
 
 // XMLHttpRequest constants
