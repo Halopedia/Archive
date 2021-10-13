@@ -150,7 +150,7 @@
     },   
     {
       "title": "Pre-Mission Evaluations",
-      "alts": ["Pre-Misison Evals", "ONI Candidate Assessment Program V5.02A"],
+      "alts": ["Pre-Mission Evals", "ONI Candidate Assessment Program V5.02A"],
       "href": "/odst/premissionevaluations",
       "category": "ODST",
       "releaseDate": 20090907,
@@ -171,6 +171,18 @@
       "removalDateApproximate": true,
       "archivalDate": "TODO",
       "thumb": "H4-XboxDotComHalo4.jpg"
+    },
+    {
+      "title": "Halo Waypoint (2014 to 2021)",
+      "alts": ["Halo Waypoint", "Waypoint"],
+      "href": "/waypoint/www.halowaypoint.com/en-us.html",
+      "category": "Waypoint",
+      "releaseDate": 20141014,
+      "releaseDateApproximate": true,
+      "removalDate": 20211101,
+      "removalDateApproximate": false,
+      "archivalDate": 20211013,
+      "thumb": "Waypoint-2014to2021.jpg"
     }
   ],
 

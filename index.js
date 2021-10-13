@@ -270,12 +270,6 @@ function filterIndividual(id) {
   }
 }
 
-if (checkbox.checked) {
-  document.getElementById("filter_ALL-label").innerText = "(deselect all)";
-} else {
-  document.getElementById("filter_ALL-label").innerText = "(select all)";
-}
-
 function filterOnly() {
   for (var id in categories) {
     categories[id].visible = document.getElementById("filter_" + id).checked;
